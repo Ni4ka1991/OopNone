@@ -7,16 +7,6 @@ class Container:
 
     def __init__( self, first = None, second = None ):
 
-### max_min func ###
-
-        def maxi( a, b ):
-            paramList = [ a, b ]
-            if( a != b ):
-                mx = max(paramList)
-                mi = min(paramList)
-            return [ mi, mx ]
-
-### max_min func ###
 
 ## constructor ##
 
@@ -27,8 +17,7 @@ class Container:
         elif( second == None ):
             self.first = first
         elif( first != None and second != None ):
-            self.first, self.second = maxi( first, second )
-
+            self.first, self.second = self.maxi( first, second )
 ## constructor ##
 
 ## view ##
@@ -55,6 +44,16 @@ class Container:
 
 ## eq ##
 
+### max_min func ###
+    
+    def maxi( self, a, b ):
+        paramList = [ a, b ]
+        if( a != b ):
+            mx = max(paramList)
+            mi = min(paramList)
+        return [ mi, mx ]
+
+### max_min func ###
 
 
 c1 = Container( )
@@ -66,5 +65,5 @@ print()
 print( c1 )
 print( c2 )
 print( c3 )
-is_eq = ( c3 == c2 )
+is_eq = ( c1 == c2 )
 print( is_eq )
